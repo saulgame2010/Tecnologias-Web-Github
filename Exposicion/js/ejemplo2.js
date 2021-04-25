@@ -36,4 +36,8 @@ function draw() {
 
     ctx.fillStyle = gradient;
     ctx.fillRect(150, 40, 70, 70);
+    ctx.strokeStyle = "#FF0000";
+    ctx.strokeRect(80, 70, 70, 60);
+    ctx.strokeStyle = gradient;
+    ctx.strokeRect(100, 70, 70, 60);
 }
