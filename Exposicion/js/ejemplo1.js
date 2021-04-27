@@ -13,7 +13,13 @@ function draw() {
     ctx.beginPath();
     ctx.strokeStyle = "rgb(0, 0, 0)";
     ctx.arc(135, 25, 20, 0, 2 * Math.PI, true);
+    ctx.closePath();
     ctx.stroke();
+
+    ctx.font="italic 10px arial";
+    ctx.fillText("rectangulo", 32, 60);
+    ctx.font="italic 35px arial";
+    ctx.strokeText("que onda", 5, 140);
 
     ctx.beginPath();
     ctx.strokeStyle = "rgb(0, 0, 0)";
@@ -36,10 +42,10 @@ function draw() {
     ctx.bezierCurveTo(230, 10, 270, 140, 290, 30);
     ctx.stroke();
 
-    ctx.beginPath();
-    ctx.moveTo(230, 100);
-    ctx.lineTo(290, 100);
-    ctx.lineTo(230, 140);
-    ctx.closePath();
-    ctx.fill();
+    ctx.beginPath(); //inicia una figura
+    ctx.moveTo(230, 100); //nos trasladamos al punto inicial de la figura
+    ctx.lineTo(290, 100); //dibuja una linea recta desde el punto anterior al indicado
+    ctx.lineTo(230, 140); 
+    ctx.closePath(); //cierra la figura uniendo los puntos
+    ctx.fill(); //rellena la figura
 }
