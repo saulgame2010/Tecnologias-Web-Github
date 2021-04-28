@@ -68,6 +68,9 @@ function draw() {
     ctx.strokeStyle = gradient2;
     ctx.strokeRect(90, 80, 70, 60);
 
+    ctx.font = "italic 25px arial";
+    ctx.strokeText("Gradiente", 35, 150);
+
     var gradient4 = ctx.createLinearGradient(190, 10, 290, 150);
     gradient4.addColorStop(0, "#D93BAF");
     gradient4.addColorStop(0.2, "#F294D9");
