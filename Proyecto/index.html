@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Estructuras de datos</title>
+	<!--Estilos-->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link id="theme" rel="stylesheet" type="text/css" href="css/dark.css">	
+	<!--JQuery-->
+	<script src="js/jquery.min.js"></script>
+	<!--MomentJS-->
+	<script src="js/moment.min.js"></script>
+	<script src="js/moment-with-locales.min.js"></script>
+	<!--Scripts-->	
+	<!--Slider-->
+	<link rel="stylesheet" href="css/jquery.bxslider.css">  	
+	<script src="js/jquery.bxslider.min.js"></script>
+</head>
+<body>
+	<div id="selector-theme">
+		<div id="to-dark"></div>
+		<div id="to-clear"></div>
+		<div id="to-color"></div>
+	</div>
+	<section id="global">
+		<!--Cabecera-->
+		<header>
+			<div id="con-logo">
+				<div id="logo">
+					<h1>Tecnologías para la web</h1>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<nav id="menu">
+				<ul>
+					<li><a href="#">INICIO</a></li>
+					<li><a href="animacion.html">Pila</a></li>
+					<li><a href="about.html">Cola</a></li>
+					<li><a href="about.html">Lista</a></li>	
+					<li><a href="about.html">NOSOTROS</a></li>					
+				</ul>
+			</nav>
+		</header>
+		<!--Slider-->
+		<div id="slider">
+			<div class="bxslider">				
+				<div>
+					<img id="escom3-i" src="img/escom3.jpg">
+				</div>
+				<div>
+					<img id="escom4-i" src="img/escom4.jpg">
+				</div>
+			</div>
+		</div>
+		<!--Contenido-->
+		<section id="content">
+			<div id="posts">	
+				<article class="post">
+					<h2>Codificación de Huffman</h2>
+					<span class="date">18 Enero de 2020</span>
+					<p>
+						En ciencias de la computación y teoría de la información, la codificación Huffman es un algoritmo usado para compresión de datos. El término se refiere al uso de una tabla de códigos de longitud variable para codificar un determinado símbolo (como puede ser un carácter en un archivo), donde la tabla ha sido rellenada de una manera específica basándose en la probabilidad estimada de aparición de cada posible valor de dicho símbolo. Fue desarrollado por David A. Huffman mientras era estudiante de doctorado en el MIT, y publicado en "A Method for the Construction of Minimum-Redundancy Codes".
+					</p>		
+					<p>
+						La codificación Huffman usa un método específico para elegir la representación de cada símbolo, que da lugar a un código prefijo (es decir, la cadena de bits que representa a un símbolo en particular nunca es prefijo de la cadena de bits de un símbolo distinto) que representa los caracteres más comunes usando las cadenas de bits más cortas, y viceversa. Huffman fue capaz de diseñar el método de compresión más eficiente de este tipo: ninguna representación alternativa de un conjunto de símbolos de entrada produce una salida media más pequeña cuando las frecuencias de los símbolos coinciden con las usadas para crear el código. Posteriormente se encontró un método para llevar esto a cabo en un tiempo lineal si las probabilidades de los símbolos de entrada (también conocidas como "pesos") están ordenadas.
+					</p>		
+					<p>
+						<center>
+							<video controls>
+								<source src="video/Huffman.mp4" type="video/mp4">
+									Tu navegador no implementa el elemento <code>video</code>
+							</video>
+						</center>
+					</p>					
+					<p>
+						Un ejemplo de un árbol dibujado es el siguiente donde los nodos hijos finales son a los que les corresponde un símbolo y una frecuencia, y los nodos padres de estos últimos se conectan como pequeños árboles a otros nodos. Los nodos con puros números indican la suma de las frecuencias de los nodos hijos correspondientes.
+					</p>
+					<center><p>
+						<img src="img/huffman.png">
+					</p></center>
+					<p>
+						La codificación Huffman es un método para crear códigos prefijo tan extendido que el término "codificación Huffman" es ampliamente usado como sinónimo de "código prefijo", incluso cuando dicho código no se ha producido con el algoritmo de Huffman.
+					</p>	
+				</article>
+			</div>
+			
+			<div class="clearfix"></div>
+		</section>
+	</section>
+	<footer id="footer">
+		Proyecto Análisis de Algoritmos
+		<a href="#" class="subir">Ir arriba</a>
+	</footer>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

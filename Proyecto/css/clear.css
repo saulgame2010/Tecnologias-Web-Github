@@ -1,0 +1,26 @@
+/*
+Autores:
+-Flores Santos Omar
+-Flores Vargas Dámaris
+-García Medina Saúl
+*/
+body{
+	background: #D6E8EE;
+	background-attachment: fixed;
+	transition: 3000ms;
+}
+#logo{	
+	background: #02457A;
+	transition: 700ms;	
+}
+#global{
+	transition: 700ms;
+}
+#menu ul li:hover{
+	background: #018ABE;
+	transition: 700ms;
+}
+.button-more{	
+	background: #001B48;
+	transition: 700ms;
+}

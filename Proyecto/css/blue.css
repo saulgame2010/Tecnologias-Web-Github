@@ -1,0 +1,62 @@
+/*
+Autores:
+-Flores Santos Omar
+-Flores Vargas Dámaris
+-García Medina Saúl
+*/
+body{
+	background: url('../img/cielo.jpg');
+	background-attachment: fixed;
+	transition: 700ms;
+}
+#logo{	
+	background: #97CADB;
+	color: black;	
+	transition: 700ms;
+}
+#global{
+	transition: 700ms;
+}
+#menu {
+	background-color: #97CADB;
+	color: black;
+	transition: 700ms;
+}
+#menu ul li:hover{
+	background: #D6E8EE;
+	color: black;
+	transition: 700ms;
+}
+#menu a{
+	color: black;
+}
+.button-more{	
+	background: #1F87C4;
+	transition: 700ms;
+}
+#header h1{
+	color: #001B48;
+	transition: 700ms;
+}
+input[type="Button"]{
+	background-color: #97CADB;
+	color: #001B48;
+	transition: 700ms;
+}
+input[type="Button"]:active{
+	box-shadow: inset 0 0 10px #D6E8EE;
+	border: 0px;
+	outline: none !important;
+	transition: 700ms;
+}
+input[type="Text"]:focus{
+	outline: none !important;
+    border:1px solid #97CADB;
+    box-shadow: 0 0 10px #97CADB;
+    transition: 700ms;
+}
+video:focus{
+	outline: none !important;
+    border:1px solid #97CADB;
+    box-shadow: 0 0 10px #97CADB;
+}

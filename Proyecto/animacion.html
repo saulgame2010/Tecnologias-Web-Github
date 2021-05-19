@@ -1,0 +1,104 @@
+<!--
+Autores:
+-Flores Santos Omar
+-Flores Vargas Dámaris
+-García Medina Saúl
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Proyecto con JS</title>
+	<!--Estilos-->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link id="theme" rel="stylesheet" type="text/css" href="css/dark.css">
+	<link id="theme" rel="stylesheet" href="css/jquery-ui-1.8.11.custom.css">
+	<!--JQuery-->
+	<script src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css">
+	<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
+	<!--Scripts-->
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/codificacion.js"></script>
+	<script type="text/javascript" src="js/Animacion/CustomEvents.js"></script>
+	<script type="text/javascript" src="js/Animacion/UndoFunctions.js"></script>
+	<script type="text/javascript" src="js/Animacion/AnimatedObject.js"></script>
+	<script type="text/javascript" src="js/Animacion/AnimatedLabel.js"></script>
+	<script type="text/javascript" src="js/Animacion/AnimatedCircle.js"></script>
+	<script type="text/javascript" src="js/Animacion/AnimatedRectangle.js"></script>
+	<script type="text/javascript" src="js/Animacion/AnimatedLinkedList.js"></script>
+	<script type="text/javascript" src="js/Animacion/HighlightCircle.js"></script>
+	<script type="text/javascript" src="js/Animacion/Line.js"></script>
+	<script type="text/javascript" src="js/Animacion/ObjectManager.js"></script>
+	<script type="text/javascript" src="js/Animacion/AnimationMain.js"></script>	
+	<script type="text/javascript" src="js/Animacion/Algorithm.js"></script>	
+	<script type="text/javascript" src="js/Animacion/Huffman.js"></script>	
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>	
+</head>
+<body onload="init();" class="VizualizationMainPage">
+	<div id="selector-theme">
+		<div id="to-dark"></div>
+		<div id="to-clear"></div>
+		<div id="to-blue"></div>
+	</div>
+	<section id="global">
+		<!--Cabecera-->
+		<header>
+			<div id="logo">
+				<h1>Análisis de Algoritmos</h1>
+			</div>
+			<div class="clearfix"></div>
+			<nav id="menu">
+				<ul>
+					<li><a href="index.html">INICIO</a></li>
+					<li><a href="animacion.html">ANIMACIÓN DE EJEMPLO</a></li>
+					<li><a href="animacion.html">Pila</a></li>
+					<li><a href="about.html">Cola</a></li>
+					<li><a href="about.html">Lista</a></li>	
+					<li><a href="about.html">NOSOTROS</a></li>					
+				</ul>
+			</nav>
+		</header>
+		<!--Slider-->
+		
+		<!--Contenido-->
+		<section id="content">
+			<div id = "container">
+
+			<div id="header">
+				<h1>Codificación de Huffman</h1>
+			</div>
+
+			<div  id = "mainContent">
+
+				<div id = "algoControlSection">
+					<!-- Table for buttons to control specific animation (insert/find/etc) -->
+					<!-- (filled in by javascript code specific to the animtion) -->
+					<table id="AlgorithmSpecificControls"> </table>
+				</div>
+
+					<!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
+
+				<canvas id="canvas" width="1000" height="1000"></canvas>
+
+				<div id = "generalAnimationControlSection">
+					<!-- Table for buttons to control general animation (play/pause/undo/etc) -->
+					<!-- (filled in by javascript code, specifically AnimationMain.js)  -->
+
+					<table id="GeneralAnimationControls">  </table>
+				</div>
+
+			</div> <!-- mainContent -->			
+		</div><!-- container -->
+			<div class="clearfix"></div>
+		</section>
+	</section>
+	<footer id="footer">
+		Proyecto Análisis de Algoritmos
+		<a href="#" class="subir">Ir arriba</a>
+	</footer>
+</body>
+</html>
