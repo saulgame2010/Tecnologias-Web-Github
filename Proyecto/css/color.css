@@ -5,58 +5,60 @@ Autores:
 -García Medina Saúl
 */
 body{
-	background: url('../img/cielo.jpg');
+	background-color: #ef9a9a;
 	background-attachment: fixed;
 	transition: 700ms;
 }
 #logo{	
-	background: #97CADB;
-	color: black;	
+	box-shadow: 0px 2px 3px black;
+	background: #D9042B;
+	color: white;	
 	transition: 700ms;
 }
 #global{
 	transition: 700ms;
 }
 #menu {
-	background-color: #97CADB;
-	color: black;
+	background-color: #D9042B;
+	color: white;
 	transition: 700ms;
 }
 #menu ul li:hover{
-	background: #D6E8EE;
-	color: black;
-	transition: 700ms;
+	border-bottom: 1px solid white;
+	font-weight: bold;
+	color: white;
+	transition: 200ms;
 }
 #menu a{
-	color: black;
+	color: white;
 }
 .button-more{	
-	background: #1F87C4;
+	background: #A6032F;
 	transition: 700ms;
 }
 #header h1{
-	color: #001B48;
+	color: #730220;
 	transition: 700ms;
 }
 input[type="Button"]{
-	background-color: #97CADB;
-	color: #001B48;
+	background-color: #D9042B;
+	color: #730220;
 	transition: 700ms;
 }
 input[type="Button"]:active{
-	box-shadow: inset 0 0 10px #D6E8EE;
+	box-shadow: inset 0 0 10px #ef9a9a;
 	border: 0px;
 	outline: none !important;
 	transition: 700ms;
 }
 input[type="Text"]:focus{
 	outline: none !important;
-    border:1px solid #97CADB;
-    box-shadow: 0 0 10px #97CADB;
+    border:1px solid #D9042B;
+    box-shadow: 0 0 10px #D9042B;
     transition: 700ms;
 }
 video:focus{
 	outline: none !important;
-    border:1px solid #97CADB;
-    box-shadow: 0 0 10px #97CADB;
+    border:1px solid #D9042B;
+    box-shadow: 0 0 10px #D9042B;
 }
