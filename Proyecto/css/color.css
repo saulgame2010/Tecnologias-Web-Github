@@ -42,7 +42,7 @@ body{
 }
 input[type="Button"]{
 	background-color: #D9042B;
-	color: #730220;
+	color: #FFFFFF;
 	transition: 700ms;
 }
 input[type="Button"]:active{

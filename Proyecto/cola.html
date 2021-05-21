@@ -1,0 +1,95 @@
+<!--
+Autores:
+-Flores Santos Omar
+-Flores Vargas Dámaris
+-García Medina Saúl
+-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Proyecto con JS</title>
+		<!--Estilos-->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<link id="theme" rel="stylesheet" type="text/css" href="css/color.css">
+		<!--Scripts-->
+		<script type = "application/javascript" src = "js/CustomEvents.js"> </script>
+		<script type = "application/javascript" src = "js/UndoFunctions.js"> </script>
+		<script type = "application/javascript" src = "js/AnimatedObject.js"> </script>
+		<script type = "application/javascript" src = "js/AnimatedLabel.js"> </script>
+		<script type = "application/javascript" src = "js/AnimatedCircle.js"> </script>
+		<script type = "application/javascript" src = "js/AnimatedRectangle.js"> </script>
+		<script type = "application/javascript" src = "js/AnimatedLinkedList.js"> </script>
+		<script type = "application/javascript" src = "js/HighlightCircle.js"> </script>
+		<script type = "application/javascript" src = "js/Line.js"> </script>
+		<script type = "application/javascript" src = "js/ObjectManager.js"> </script>
+		<script type = "application/javascript" src = "js/AnimationMain.js"> </script>
+		<script type = "application/javascript" src = "js/Algorithm.js"> </script>
+		<script type = "application/javascript" src = "js/StackArray.js"> </script>
+		<script type="text/javascript" src="js/main.js"></script>	
+	</head>
+<body  class="VizualizationMainPage">
+	<div id="selector-theme">
+		<div id="to-dark"></div>
+		<div id="to-color"></div>
+		<div id="to-clear"></div>
+	</div>
+	<section id="global">
+		<!--Cabecera-->
+		<header>
+			<div id="con-logo">
+				<div id="logo">
+					<h1>Tecnologías para la web</h1>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<nav id="menu">
+				<ul>
+					<li><a href="index.html">INICIO</a></li>
+					<li><a href="pila.html">Pila</a></li>
+					<li><a href="cola.html">Cola</a></li>
+					<li><a href="lista.html">Lista</a></li>	
+					<li><a href="about.html">NOSOTROS</a></li>					
+				</ul>
+			</nav>
+		</header>
+		<!--Slider-->
+		
+		<!--Contenido-->
+		<section id="content">
+			<div id = "container">
+
+			<div id="header">
+				<h1>Cola</h1>
+			</div>
+
+			<div  id = "mainContent">
+
+				<div id = "algoControlSection">
+					<!-- Table for buttons to control specific animation (insert/find/etc) -->
+					<!-- (filled in by javascript code specific to the animtion) -->
+					<table id="AlgorithmSpecificControls"> </table>
+				</div>
+
+					<!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
+
+				<canvas id="canvas" width="1000" height="500"></canvas>
+
+				<div id = "generalAnimationControlSection">
+					<!-- Table for buttons to control general animation (play/pause/undo/etc) -->
+					<!-- (filled in by javascript code, specifically AnimationMain.js)  -->
+
+					<table id="GeneralAnimationControls">  </table>
+				</div>
+
+			</div> <!-- mainContent -->			
+		</div><!-- container -->
+			<div class="clearfix"></div>
+		</section>
+	</section>
+	<footer id="footer">
+		Proyecto Análisis de Algoritmos
+		<a href="#" class="subir">Ir arriba</a>
+	</footer>
+</body>
+</html>

@@ -1,6 +1,4 @@
 window.onload = function () {    
-    alert('Si jala');
-    
     const dark = document.getElementById("to-dark");
     const clear = document.getElementById("to-clear");
     const color = document.getElementById("to-color");
@@ -8,6 +6,7 @@ window.onload = function () {
     dark.addEventListener('click', cambiarDark, false);    
     clear.addEventListener('click', cambiarClear, false);
     color.addEventListener('click', cambiarColor, false);
+    init();    
 }
 
 function cambiarDark() {
