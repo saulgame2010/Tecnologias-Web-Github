@@ -1,0 +1,34 @@
+@keyframes slidein {
+    from {
+        margin-bottom: 100%;
+    }
+
+    to {
+        margin-bottom: 0%;
+    }
+}
+
+@keyframes slideout {
+    from {
+        margin-top: 0%;
+    }
+
+    to {
+        margin-top: 100%;
+    }
+}
+
+@keyframes resaltar {
+    0% {
+        background-color: white;
+        color: black;
+    }
+    50% {
+        background-color: red;
+        color: white;
+    }
+    100% {
+        background-color: white;
+        color: black;
+    }
+}

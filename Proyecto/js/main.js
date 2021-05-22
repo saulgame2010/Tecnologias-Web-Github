@@ -6,7 +6,7 @@ window.onload = function () {
     dark.addEventListener('click', cambiarDark, false);    
     clear.addEventListener('click', cambiarClear, false);
     color.addEventListener('click', cambiarColor, false);
-    init();    
+    //init();    
 }
 
 function cambiarDark() {

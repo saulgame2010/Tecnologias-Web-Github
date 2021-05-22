@@ -11,9 +11,10 @@ Autores:
 		<title>Proyecto con JS</title>
 		<!--Estilos-->
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<link id="theme" rel="stylesheet" type="text/css" href="css/dark.css">		
-		<!--Scripts-->		
-		<script type="text/javascript" src="js/main.js"></script>	
+		<link id="theme" rel="stylesheet" type="text/css" href="css/dark.css">
+		<link rel="stylesheet" href="css/cola.css">		
+		<!--Scripts-->
+		<script src="js/cola.js"></script>			
 	</head>
 <body class="VizualizationMainPage">
 	<div id="selector-theme">
@@ -47,7 +48,20 @@ Autores:
 			<div id="header">
 				<h1>Cola</h1>
 			</div>
-			
+			<div id="controles">
+				<input type="text" name="elemento" id="elemento">				
+				<input type="button" value="Poner en cola" id="ponerCola">
+				<input type="button" value="Sacar de cola" id="quitarCola">
+			</div>
+			<!--<canvas id="canvas" width="800" height="500"></canvas>-->
+			<div id="animacion"></div>
+			<pre id="codigo">
+<span id="span">struct nodo {</span>
+<span id="span">	int dato;</span>
+<span id="span">	struct nodo *siguiente;</span>
+};
+			</pre>
+			<div class="clearfix"></div>
 		</section>
 	</section>
 	<footer id="footer">

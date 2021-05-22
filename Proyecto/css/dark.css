@@ -78,4 +78,5 @@ video:focus{
 
 canvas {
 	background-color: #6d6d6d;
+	transition: 800ms;
 }
