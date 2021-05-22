@@ -8,16 +8,6 @@
     }
 }
 
-@keyframes slideout {
-    from {
-        margin-top: 0%;
-    }
-
-    to {
-        margin-top: 100%;
-    }
-}
-
 @keyframes resaltar {
     0% {
         background-color: white;

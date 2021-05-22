@@ -285,7 +285,7 @@ pre {
 	float: right;
 }
 
-#nodos{
+#nodos{	
 	display: flex;
 	justify-content: center;
 	align-items: center;

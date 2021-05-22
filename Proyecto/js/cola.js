@@ -67,7 +67,7 @@ function createElement() {
 }
 
 function quitarElement() {
-    let elemento = document.getElementById("nodos");       
+    let elemento = document.getElementById("nodos");           
     if(!elemento) {
         alert("La cola está vacía");
     } else {        
