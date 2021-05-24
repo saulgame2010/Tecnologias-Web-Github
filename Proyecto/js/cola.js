@@ -40,7 +40,7 @@ function createElement() {
             cont+=10;
             if(newMgBottom > 0) {
                 window.requestAnimationFrame(animar);
-            }   
+            }   jsjasjasjasjas jasjsjsfoewofewojnf
         }              
     };
     animar();*/
