@@ -309,3 +309,24 @@ span{
 	width: 100%;
 	float: left;
 }
+
+.arrow {
+	width: 20px;
+}
+
+.line {
+	margin-top: 3px;
+	width: 10px;
+	background: blue;
+	height: 2px;
+	float: left;
+}
+
+.point {
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 10px solid blue;
+	float: right;
+}
