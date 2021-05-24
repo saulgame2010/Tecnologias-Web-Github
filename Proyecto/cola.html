@@ -56,10 +56,39 @@ Autores:
 			<!--<canvas id="canvas" width="800" height="500"></canvas>-->
 			<div id="animacion"></div>
 			<pre id="codigo">
-<span id="span">struct nodo {</span>
-<span id="span">	int dato;</span>
-<span id="span">	struct nodo *siguiente;</span>
-};
+<span id="queue">
+void Queue(cola * c, elemento e){
+	if(c->num_elem==0){
+		c->frente++;
+		c->final++;
+		c->elementos[c->final] = e;
+		c->num_elem++;
+	}
+</span>
+<span id="dequeue">
+elemento Dequeue(cola * c){
+	elemento e;
+	int i;
+	if(c->num_elem==0){
+		printf("error: desbordamiento de cola");
+		exit(2);
+	}
+	else{
+		e = c->elementos[c->frente];
+		
+		for(i = c->frente; i < c->final; i++){
+			c->elementos[i]=c->elementos[i + 1];
+		}
+		c->final--;
+		c->num_elem--;
+		
+		if(c->num_elem==0)
+			Initialize(c);
+	}
+	
+	return e;
+}
+</span>
 			</pre>
 			<div class="clearfix"></div>
 		</section>

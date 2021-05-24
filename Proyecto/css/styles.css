@@ -274,8 +274,7 @@ video:focus{
 	height: 700px;
 	width: 60%;
 	background-color: white;
-	float: left;
-	
+	float: left;	
 }
 
 pre {
@@ -283,9 +282,10 @@ pre {
 	padding: 10px;
 	background-color: whitesmoke;
 	float: right;
+	overflow: scroll;
 }
 
-#nodos{	
+#nodo{	
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -294,7 +294,15 @@ pre {
 	border: 1px solid red;
 	border-radius: 50%;
 	margin: 10px;
-	float: left;
+	float: left;		
+}
+
+.nodos {
+	transition: opacity 2s;
+}
+
+.ocultar {
+	opacity: 0;
 }
 
 span{
