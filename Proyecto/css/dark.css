@@ -80,3 +80,22 @@ canvas {
 	background-color: #6d6d6d;
 	transition: 800ms;
 }
+
+#animacion {
+	background-color: #6d6d6d;
+}
+
+pre {
+	background-color: #6d6d6d;
+	color: white;
+}
+
+.line {
+	background: white;
+}
+
+.point {
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 10px solid white;
+}

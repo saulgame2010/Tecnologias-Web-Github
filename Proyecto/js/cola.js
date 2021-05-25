@@ -15,22 +15,42 @@ window.onload = function() {
 }
 
     let texto;
-    let newDiv;
+    let newDiv, arrow, line, point;
 
 function createElement() {    
     texto = document.getElementById("elemento").value;
     newDiv = document.createElement("div");
+    arrow = document.createElement("div");
+    line = document.createElement("div");
+    point = document.createElement("div");
     newDiv.setAttribute("id", "nodo");
-    newDiv.setAttribute("class", "nodos");   
+    newDiv.setAttribute("class", "nodos");
+    arrow.setAttribute("class", "arrow");
+    arrow.setAttribute("id", "flecha");
+    line.setAttribute("class", "line");
+    point.setAttribute("class", "point");
     let content = document.createTextNode(texto);        
     newDiv.appendChild(content);
+    arrow.appendChild(line);
+    arrow.appendChild(point);
     //Si quieres animarlo de la otra forma, deberás borrar esta línea
-    newDiv.style.animation = "slidein 2s";
+    newDiv.style.animation = "slidein 3s";
+    arrow.style.animation = "flecha 3s";
     let divActual = document.getElementById("animacion");            
     //Esto es parte de la otra forma de animarlo
     //newDiv.style.marginBottom = "100%";
     divActual.appendChild(newDiv);
+    divActual.appendChild(arrow);
     document.getElementById("elemento").value = "";
+    let cont = 1
+    var interval = setInterval(() => {
+        if(cont < 7) {
+            highlightFor("code"+cont, "#A6032F", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 500);   
     //Esta es otra forma de animarlo >:(
     //let cont = 0;
     /*var animar = () => {               
@@ -49,14 +69,29 @@ function createElement() {
 function quitarElement() {         
     if(!elemento) {
         alert("La cola está vacía");
-    } else {
-        document.querySelector(".nodos").classList.add("ocultar");
-        setTimeout(() => {
-            let elemento = document.getElementById("nodo");
-            let padre = elemento.parentNode;        
-            padre.removeChild(elemento);
-        }, 1000);                
+    } else {        
+        if(!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))){
+            alert("La cola está vacía");
+        } else {
+            document.querySelector(".nodos").classList.add("ocultar");
+            setTimeout(() => {
+                let elemento = document.getElementById("nodo");
+                let flecha = document.getElementById("flecha");
+                let divPadre = document.getElementById("animacion");
+                divPadre.removeChild(elemento);
+                divPadre.removeChild(flecha);                
+            }, 1000);
+        }                              
     }
+}
+
+function highlightFor(id, color, seconds){
+    var element = document.getElementById(id);
+    var origcolor = element.style.backgroundColor;
+    element.style.backgroundColor = color;
+    var t = setTimeout(function(){
+    element.style.backgroundColor = origcolor;
+    },(seconds*1000));
 }
 
 function cambiarDark() {

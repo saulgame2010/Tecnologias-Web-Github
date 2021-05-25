@@ -285,16 +285,19 @@ pre {
 	overflow: scroll;
 }
 
-#nodo{	
+#nodo{
+	background-color: #A6032F;
+	color: white;
 	display: flex;
+	font-family: 'Josefin';
 	justify-content: center;
 	align-items: center;
 	width: 30px;
-	height: 30px;
-	border: 1px solid red;
+	height: 30px;	
 	border-radius: 50%;
 	margin: 10px;
-	float: left;		
+	float: left;
+	box-shadow: 2px 2px 3px black;	
 }
 
 .nodos {
@@ -320,6 +323,7 @@ span{
 	background: blue;
 	height: 2px;
 	float: left;
+	transition: 3000ms;
 }
 
 .point {
@@ -329,4 +333,5 @@ span{
 	border-bottom: 5px solid transparent;
 	border-left: 10px solid blue;
 	float: right;
+	transition: 3000ms;
 }
