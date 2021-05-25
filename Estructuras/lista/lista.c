@@ -1,151 +1,106 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include "TADLista.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <conio.h>
 
-void Initialize (lista *l)
+typedef struct nodo
 {
-	l->frente=NULL;
-	l->final=NULL;
-	l->tamanio=0;
-	return; 
-}
-void Destroy (lista *l)
+	int info;
+	struct nodo *sig;
+} nodoL;
+
+// Alias para lista
+typedef nodoL* lista;
+
+void insFront(lista *L, int n);/* inserta el valor n al frente de la lista */
+int mostrar(nodoL* L);/* muestra por pantalla los valores de L, en forma recursiva */
+void borrar(lista *L, int n);/*borra un elemento de la lista*/
+
+int main()
 {
-	//Apuntador auxiliar a nodo
-	nodo *aux;
-	
-	//Mientras el apuntador del frente de la lista no sea "NULL"
-	while(l->frente != NULL)
+	//Se declara y asigna una la variable paraa controlar la opción selecionada en el menú.
+	int op=-1;
+	//Se declara una lista.
+	lista milista=NULL;
+	//Mientras op se distinto de 0 (Cuando es op=0 finaliza el programa.
+	while(op)
 	{
-		//Guardar la referencia el frente
-		aux = l->frente;
-		
-		//El nuevo frente es el siguiente
-		l->frente = l->frente->siguiente;
-		
-		//Liberar el antiguo frente de memoria
-		free(aux);
-	}
-
-	//Colocar el final inicializado en "NULL"
-	l->final = NULL;
-	l->tamanio = 0;
-	return;		
-}
-
-posicion Final (lista *l)
-{
-	return l->final;
-}
-
-posicion First (lista *l)
-{
-		return l->frente;
-}
-
-posicion Following (lista *l,posicion p)
-{
-	if(ValidatePosition (l,p))
-		return p->siguiente;
-	else
-		exit(1);		
-}
-
-posicion Previous (lista *l,posicion p);
-{
-	posicion aux;
-		
-		if(p==l->frente) 
-			return NULL;
-				
-		aux=l->frente;
-		while(aux!=NULL)
+		system("cls"); //Borrar la pantalla.
+		//Mostrar en pantalla las opciones del menú.
+		printf("\t\tEjemplo  con Listas\n\n\tSeleccione una opcion\n\n\t1. Agregar elemento al frente\n\t2. Mostrar lista\n\t3. Borrar un elemento\n\t0. Salir\n");
+		scanf("%d",&op); //Captura el numero opción selecionada.
+		switch(op) //Ir a la opción indicada por el usuario.
 		{
-			if(aux->siguiente==p)
-				return aux;
-		}
-		exit(1);
-}
-
-posicion Search (lista *l,elemento e)
-{
-	posicion aux=l->frente;
-	
-	while(aux!=NULL)
-	{
-		if(memcmp(&(aux->e),&e,sizeof(elemento))==0)
+			//Ingresar un valor al comienzo de la lista.
+		case 1:
 		{
-			return aux;
+			int numNuevo;//Crear una variable para el numero a insertar en la lista.
+			system("cls");//Borrar la pantalla.
+			printf("Ingrese el numero para agregar a la lista:\n");//Pedir por pantalla un numero para insertar en la lista.
+			scanf("%d",&numNuevo);//Capturar el número a insertar en la lista.
+			system("cls");//Borrar la pantalla.
+			insFront(&milista,numNuevo);//LLamara al procedimiento que inserta un numero al comienzo de la lista.
+			getch(); //Esperar que el usuario presione una tecla.
+			break;
 		}
-		aux=aux->siguiente;
+		//Mostrar la lista por pantalla.
+		case 2:
+		{
+			system("cls");//Borrar la pantalla.
+			//Mostrar en pantalla un titulo.
+			printf("Los numeros cargados en la lista:\n\n");
+			//Declarar un variable y asignarle el valor devuelto por la función  mostrar (0 Lista vacía 1Lista no vacia).
+			int i = mostrar(milista);
+			//Chequear si la lista esta vacía y mostrar en pantalla el exto que corresponda.
+			if(i==0)printf("La lista esta vacia \n\n");
+			else printf("# \n\n");
+			//Esperar que el usuario presione una tecla.
+			getch();
+			break;
+		}
+		//Eliminar un número de la lista.
+		case 3:
+		{
+			int n; //Crear un varible que almacene el número a borrar de la lista.
+			system("cls");//Borrar la pantalla.
+			printf("Ingrese el numero para borrar de la lista:\n"); //Pedir por pantalla un nuúmero para borrar de la lista.
+			scanf("%d",&n); //Capturar el número a borrar de la lista.
+			system("cls");//Borrar la pantalla.
+			borrar(&milista,n); //LLamar a la función borrar.
+			getch(); //Esperar que el usuario presione una tecla.
+			break;
+		}
+		}
 	}
-	return NULL;
+	return 0;
 }
 
-elemento Position (lista *l,posicion p)
-{
-	if(ValidatePosition (l,p))
-		return p->e;
-	else
-		exit(1);
-}
+void insFront (lista *L, int n){
+	lista aux = malloc(sizeof(nodoL)); //Crear un nuevo nodo.
+	aux -> info = n; //Asignar el valor al nodo.
+	aux -> sig = *L; //Apuntar el nodo al nodo que apuntaba la lista.
+	*L=aux; //Hacer que la lista apunte al nodo nuevo.
+	printf("Se agrego el %d a la lista\n",n); //Escribir en pantalla que se agregó el valor a la lista.
+}/* inserta el valor n al frente de la lista */
 
-boolean ValidatePosition (lista *l,posicion p)
-{
-	posicion aux=l->frente;
-	
-	while(aux!=NULL)
-	{
-		if(aux==p)
-			return TRUE;
-		aux=aux->siguiente;	
+int mostrar(nodoL* L){
+	//Crea y asigna 0 a la variable a devolver
+	int i=0;
+	//Preguntar si la lista no es vacia
+	if (L!=NULL){
+		//Asigna 1 a la variable i.
+		i=1;
+		//Muestra el valor actual en pantalla
+		printf(" |%d|->",L->info);
+		//Llama la función con el próximo valor.
+		mostrar(L->sig);
 	}
-	return FALSE;
-}
+	//La función devulelve el resultado.
+	return i;
+}/*muestra por pantalla los valores de L, en forma recursiva retorna 0 para lista vacía y 1 para la lista con elementos*/
 
-posicion ElementPosition(lista *l, int n)
-{
-	posicion r=NULL;
-	int i;
-	
-	if(n>0&&n<=Size(l))
-	{
-		aux=l->frente;
-		for(i=2;i<=n;i++)
-			aux=aux->siguiente;
-		return aux;		
-	}
-	else
-		return NULL;
-	
+void borrar(lista *L, int n){
+	lista aux = *L; //puntero auxiliar al primer nodo
+	(*L) = (*L) -> sig; //hago apuntar l al siguiente nodo
+	free(aux);   //elimino el primer nodo de la memoria
 }
-
-elemento Element(lista *l, int n)
-{
-	elemento r;
-	int i;
-	
-	if(n>0&&n<=Size(l))
-	{
-		aux=l->frente;
-		for(i=2;i<=n;i++)
-			aux=aux->siguiente;
-		return aux->e;		
-	}
-	else
-		exit(1);
-}
-
-int Size (lista *l)
-{
-	
-}
-
-boolean Empty (lista *l);
-void Insert (lista * l, posicion p, elemento e, boolean b);
-void Add (lista *l,elemento e)
-{
-	
-}
-void Remove (lista *l,posicion p);
-void Replace (lista *l,posicion p, elemento e);
