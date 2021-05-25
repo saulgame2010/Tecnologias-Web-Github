@@ -8,15 +8,6 @@
     }
 }
 
-@keyframes slideout {
-    from {
-        margin-right: 0%;
-    }
-    to{
-        margin-right: 100%;
-    }
-}
-
 @keyframes flecha {
     0% {
         opacity: 0%;
@@ -26,20 +17,5 @@
     }
     100% {
         opacity: 100%;
-    }
-}
-
-@keyframes resaltar {
-    0% {
-        background-color: white;
-        color: black;
-    }
-    50% {
-        background-color: red;
-        color: white;
-    }
-    100% {
-        background-color: white;
-        color: black;
     }
 }

@@ -8,7 +8,7 @@ Autores:
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>Proyecto con JS</title>
+		<title>Cola</title>
 		<!--Estilos-->
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link id="theme" rel="stylesheet" type="text/css" href="css/dark.css">
@@ -53,21 +53,32 @@ Autores:
 				<input type="button" value="Poner en cola" id="ponerCola">
 				<input type="button" value="Sacar de cola" id="quitarCola">
 			</div>
-			<!--<canvas id="canvas" width="800" height="500"></canvas>-->
+			<!--Este div es el área de animación-->
 			<div id="animacion">				
 			</div>
+			<!--Este pre es para poner el código, el <pre> funciona como un <p>
+				solo que éste respeta los saltos de línea y espacios que se hagan aquí en el
+			editor de texto, es decir, si usas <pre> 
+			hola
+			jaja
+			ok </pre> en el html aparecerá como tal
+		"hola
+		jaja
+		ok" con esos saltos de línea sin necesidad de usar <br> o etiquetas <p> individuales-->
 			<pre id="codigo">
 <span id="queue">
-<span id="code1">void Queue(cola * c, elemento e){</span>
-	<span id="code2">if(c->num_elem==0){</span>
-		<span id="code3">c->frente++;</span>
-		<span id="code4">c->final++;</span>
-		<span id="code5">c->elementos[c->final] = e;</span>
-		<span id="code6">c->num_elem++;</span>
+	<!--Aquí es importante poner un span con un id a todas las líneas de código que queramos
+	resaltar con la animación de javascript-->
+<span id="qCode1">void Queue(cola * c, elemento e){</span>
+	<span id="qCode2">if(c->num_elem==0){</span>
+		<span id="qCode3">c->frente++;</span>
+		<span id="qCode4">c->final++;</span>
+		<span id="qCode5">c->elementos[c->final] = e;</span>
+		<span id="qCode6">c->num_elem++;</span>
 	}
 </span>
 <span id="dequeue">
-elemento Dequeue(cola * c){
+<span id="dCode1">elemento Dequeue(cola * c){</span>
 	elemento e;
 	int i;
 	if(c->num_elem==0){
@@ -75,19 +86,19 @@ elemento Dequeue(cola * c){
 		exit(2);
 	}
 	else{
-		e = c->elementos[c->frente];
+		<span id="dCode2">e = c->elementos[c->frente];</span>
 		
 		for(i = c->frente; i < c->final; i++){
-			c->elementos[i]=c->elementos[i + 1];
+			<span id="dCode3">c->elementos[i]=c->elementos[i + 1];</span>
 		}
-		c->final--;
-		c->num_elem--;
+		<span id="dCode4">c->final--;</span>
+		<span id="dCode5">c->num_elem--;</span>
 		
 		if(c->num_elem==0)
 			Initialize(c);
 	}
 	
-	return e;
+	<span id="dCode6">return e;</span>
 }
 </span>
 			</pre>
@@ -95,7 +106,7 @@ elemento Dequeue(cola * c){
 		</section>
 	</section>
 	<footer id="footer">
-		Proyecto Análisis de Algoritmos
+		Proyecto Tecnologías para la web
 		<a href="#" class="subir">Ir arriba</a>
 	</footer>
 </body>
