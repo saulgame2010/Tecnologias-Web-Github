@@ -62,3 +62,22 @@ video:focus{
     border:1px solid #D9042B;
     box-shadow: 0 0 10px #D9042B;
 }
+
+#animacion {
+	background-color: white;
+}
+
+pre {
+	background-color: white;
+	color: black;
+}
+
+.line {
+	background: #D9042B;
+}
+
+.point {
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 10px solid #D9042B;
+}
