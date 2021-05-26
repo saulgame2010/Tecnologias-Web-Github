@@ -14,19 +14,23 @@ window.onload = function() {
     ponerCola.addEventListener('click', createElement, false);
     const quitarCola = document.getElementById("quitarCola");
     quitarCola.addEventListener('click', quitarElement, false);
+    const guardar = document.getElementById("guardar");
+    guardar.addEventListener('click', guardarEstructura, false);
+    const restaurar = document.getElementById("restaurar");
+    restaurar.addEventListener('click', restaurarEstructura, false);
 }
 /* Estas variables son: texto-para el texto que irá dentro de los divs que serán
 los nodos de la estructura, newDiv-es el nodo de la estructura, arrow-es un div
 que contiene dos div que corresponden a la línea y a la punta de flecha(line y point) */
 let texto;
 let newDiv, arrow, line, point;
-
-
+let cola = [];
 
 function createElement() {
     /* Cuando se llama a esta función con el botón de agregar elemento se obtiene el valor
     que se puso en el input, ese será el texto que pondremos en el nodo que se va a agregar */
     texto = document.getElementById("elemento").value;
+    cola.push(texto);
     /* ----------CREAR EL NODO CON LA FLECHA--------- */
     /* aquí se crean 4 divs, uno que es el nodo, otro que es el contenedor de la flecha
     y los otros dos son los elementos de la flecha, la línea y la punta de flecha, en este
@@ -157,6 +161,42 @@ function highlightFor(id, color, seconds){
     var t = setTimeout(function(){
     element.style.backgroundColor = origcolor;
     },(seconds*1000));
+}
+
+function guardarEstructura() {
+    localStorage.setItem('cola', JSON.stringify(cola)); 
+    alert('Se guardó tu estructura correctamente en el Local Storage del navegador');   
+}
+
+function restaurarEstructura() {
+    var arrayCola = localStorage.getItem('cola');
+    arrayCola = JSON.parse(arrayCola);
+    var animacionDiv = document.getElementById("animacion");
+    if(animacionDiv.hasChildNodes()) {
+        while(animacionDiv.childNodes.length >= 1) {
+            animacionDiv.removeChild(animacionDiv.firstChild);
+        }
+    }
+    arrayCola.forEach(element => {
+        newDiv = document.createElement("div");
+        arrow = document.createElement("div");
+        line = document.createElement("div");
+        point = document.createElement("div");
+        newDiv.setAttribute("id", "nodo");
+        newDiv.setAttribute("class", "nodos");
+        arrow.setAttribute("class", "arrow");
+        arrow.setAttribute("id", "flecha");
+        line.setAttribute("class", "line");
+        point.setAttribute("class", "point");
+        let content = document.createTextNode(element);
+        newDiv.appendChild(content);
+        arrow.appendChild(line);
+        arrow.appendChild(point);
+        newDiv.style.animation = "slidein 3s";
+        arrow.style.animation = "flecha 3s";                        
+        animacionDiv.appendChild(newDiv);
+        animacionDiv.appendChild(arrow);
+    });
 }
 
 function cambiarDark() {
