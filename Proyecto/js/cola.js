@@ -18,6 +18,11 @@ window.onload = function() {
     guardar.addEventListener('click', guardarEstructura, false);
     const restaurar = document.getElementById("restaurar");
     restaurar.addEventListener('click', restaurarEstructura, false);
+    const limpiar = document.getElementById("limpiar");
+    limpiar.addEventListener('click', () => {
+        localStorage.clear();
+        console.log(cola);
+    }, false);
 }
 /* Estas variables son: texto-para el texto que irá dentro de los divs que serán
 los nodos de la estructura, newDiv-es el nodo de la estructura, arrow-es un div
