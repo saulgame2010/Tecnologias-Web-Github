@@ -135,6 +135,7 @@ function quitarElement() {
             document.querySelector(".nodos").classList.add("ocultar");
             /* Este es el mismo código para animar el código en C pero ahora aplicado para
             eliminar un elemento de la cola */
+            cola.shift();
             let cont = 1
             var interval = setInterval(() => {
                 if(cont < 7) {
@@ -176,6 +177,7 @@ function guardarEstructura() {
 function restaurarEstructura() {
     var arrayCola = localStorage.getItem('cola');
     arrayCola = JSON.parse(arrayCola);
+    cola = [...arrayCola]
     var animacionDiv = document.getElementById("animacion");
     if(animacionDiv.hasChildNodes()) {
         while(animacionDiv.childNodes.length >= 1) {
