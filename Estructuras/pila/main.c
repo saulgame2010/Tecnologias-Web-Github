@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include "TADPila.h"
 
+//para poder compilarlo yo lo hago desde el cmd y con el gcc, pongo "gcc TADCola.h main.c" y ya luego me genera el ejecutable y solo pongo "a"
 int main(void)
 {
 	pila mi_pila;
