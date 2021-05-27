@@ -331,7 +331,7 @@ span{
 	height: 0;
 	border-top: 5px solid transparent;
 	border-bottom: 5px solid transparent;
-	border-left: 10px solid blue;
+	border-left: 10px solid red;
 	float: right;
 	transition: 3000ms;
 }

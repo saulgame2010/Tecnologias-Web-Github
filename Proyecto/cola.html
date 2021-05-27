@@ -1,65 +1,61 @@
-<!--
-Autores:
--Flores Santos Omar
--Flores Vargas Dámaris
--García Medina Saúl
--->
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<title>Cola</title>
-		<!--Estilos-->
-		<link rel="stylesheet" type="text/css" href="css/styles.css">
-		<link id="theme" rel="stylesheet" type="text/css" href="css/dark.css">
-		<link rel="stylesheet" href="css/cola.css">		
-		<!--Scripts-->
-		<script src="js/cola.js"></script>			
-	</head>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cola</title>
+    <!--Estilos-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link id="theme" rel="stylesheet" type="text/css" href="css/color.css">
+    <link rel="stylesheet" href="css/cola.css">
+    <!--Scripts-->
+    <script src="js/cola.js"></script>
+</head>
+
 <body class="VizualizationMainPage">
-	<div id="selector-theme">
-		<div id="to-dark"></div>
-		<div id="to-color"></div>
-		<div id="to-clear"></div>
-	</div>
-	<section id="global">
-		<!--Cabecera-->
-		<header>
-			<div id="con-logo">
-				<div id="logo">
-					<h1>Tecnologías para la web</h1>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<nav id="menu">
-				<ul>
-					<li><a href="index.html">INICIO</a></li>
-					<li><a href="pila.html">Pila</a></li>
-					<li><a href="cola.html">Cola</a></li>
-					<li><a href="lista.html">Lista</a></li>	
-					<li><a href="about.html">NOSOTROS</a></li>					
-				</ul>
-			</nav>
-		</header>
-		<!--Slider-->
-		
-		<!--Contenido-->
-		<section id="content">
-			<div id="header">
-				<h1>Cola</h1>
-			</div>
-			<div id="controles">
-				<input type="text" name="elemento" id="elemento">				
-				<input type="button" value="Poner en cola" id="ponerCola">
-				<input type="button" value="Sacar de cola" id="quitarCola">
-				<input type="button" value="Guardar estructura" id="guardar">
-				<input type="button" value="Restaurar estructura" id="restaurar">
-				<input type="button" value="Limpiar Storage" id="limpiar">
-			</div>
-			<!--Este div es el área de animación-->
-			<div id="animacion">				
-			</div>
-			<!--Este pre es para poner el código, el <pre> funciona como un <p>
+    <div id="selector-theme">
+        <div id="to-dark"></div>
+        <div id="to-color"></div>
+        <div id="to-clear"></div>
+    </div>
+    <section id="global">
+        <!--Cabecera-->
+        <header>
+            <div id="con-logo">
+                <div id="logo">
+                    <h1>Tecnologías para la web</h1>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="pila.html">Pila</a></li>
+                    <li><a href="cola.html">Cola</a></li>
+                    <li><a href="lista.html">Lista</a></li>
+                    <li><a href="about.html">NOSOTROS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--Slider-->
+
+        <!--Contenido-->
+        <section id="content">
+            <div id="header">
+                <h1>Cola</h1>
+            </div>
+            <div id="controles">
+                <input type="text" name="elemento" id="elemento">
+                <input type="button" value="Poner en cola" id="ponerCola">
+                <input type="button" value="Sacar de cola" id="quitarCola">
+                <input type="button" value="Guardar estructura" id="guardar">
+                <input type="button" value="Restaurar estructura" id="restaurar">
+                <input type="button" value="Limpiar Storage" id="limpiar">
+            </div>
+            <!--Este div es el área de animación-->
+            <div id="animacion">
+            </div>
+            <!--Este pre es para poner el código, el <pre> funciona como un <p>
 				solo que éste respeta los saltos de línea y espacios que se hagan aquí en el
 			editor de texto, es decir, si usas <pre> 
 			hola
@@ -68,7 +64,7 @@ Autores:
 		"hola
 		jaja
 		ok" con esos saltos de línea sin necesidad de usar <br> o etiquetas <p> individuales-->
-			<pre id="codigo">
+            <pre id="codigo">
 <span id="queue">
 	<!--Aquí es importante poner un span con un id a todas las líneas de código que queramos
 	resaltar con la animación de javascript-->
@@ -105,12 +101,13 @@ Autores:
 }
 </span>
 			</pre>
-			<div class="clearfix"></div>
-		</section>
-	</section>
-	<footer id="footer">
-		Proyecto Tecnologías para la web
-		<a href="#" class="subir">Ir arriba</a>
-	</footer>
+            <div class="clearfix"></div>
+        </section>
+    </section>
+    <footer id="footer">
+        Proyecto Tecnologías para la web
+        <a href="#" class="subir">Ir arriba</a>
+    </footer>
 </body>
+
 </html>
