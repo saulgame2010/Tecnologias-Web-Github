@@ -1,32 +1,32 @@
 window.onload = function() {
-    //estas tres líneas son para obtener el cambiador de tema
-    const dark = document.getElementById("to-dark");
-    const clear = document.getElementById("to-clear");
-    const color = document.getElementById("to-color");
-    /*Las sig tres líneas son para agregar el evento click
-    y así llamar a las funciones que cambian el tema de la página*/
-    dark.addEventListener('click', cambiarDark, false);    
-    clear.addEventListener('click', cambiarClear, false);
-    color.addEventListener('click', cambiarColor, false);
-    /*Estas líneas son los botones que llaman a la funcion de crear
-    y eliminar elemento para la animación de la cola*/   
-    const ponerCola = document.getElementById("ponerCola");    
-    ponerCola.addEventListener('click', createElement, false);
-    const quitarCola = document.getElementById("quitarCola");
-    quitarCola.addEventListener('click', quitarElement, false);
-    const guardar = document.getElementById("guardar");
-    guardar.addEventListener('click', guardarEstructura, false);
-    const restaurar = document.getElementById("restaurar");
-    restaurar.addEventListener('click', restaurarEstructura, false);
-    const limpiar = document.getElementById("limpiar");
-    limpiar.addEventListener('click', () => {
-        localStorage.clear();
-        console.log(cola);
-    }, false);
-}
-/* Estas variables son: texto-para el texto que irá dentro de los divs que serán
-los nodos de la estructura, newDiv-es el nodo de la estructura, arrow-es un div
-que contiene dos div que corresponden a la línea y a la punta de flecha(line y point) */
+        //estas tres líneas son para obtener el cambiador de tema
+        const dark = document.getElementById("to-dark");
+        const clear = document.getElementById("to-clear");
+        const color = document.getElementById("to-color");
+        /*Las sig tres líneas son para agregar el evento click
+        y así llamar a las funciones que cambian el tema de la página*/
+        dark.addEventListener('click', cambiarDark, false);
+        clear.addEventListener('click', cambiarClear, false);
+        color.addEventListener('click', cambiarColor, false);
+        /*Estas líneas son los botones que llaman a la funcion de crear
+        y eliminar elemento para la animación de la cola*/
+        const ponerCola = document.getElementById("ponerCola");
+        ponerCola.addEventListener('click', createElement, false);
+        const quitarCola = document.getElementById("quitarCola");
+        quitarCola.addEventListener('click', quitarElement, false);
+        const guardar = document.getElementById("guardar");
+        guardar.addEventListener('click', guardarEstructura, false);
+        const restaurar = document.getElementById("restaurar");
+        restaurar.addEventListener('click', restaurarEstructura, false);
+        const limpiar = document.getElementById("limpiar");
+        limpiar.addEventListener('click', () => {
+            localStorage.clear();
+            alert("Se ha limpiado el local storage");
+        }, false);
+    }
+    /* Estas variables son: texto-para el texto que irá dentro de los divs que serán
+    los nodos de la estructura, newDiv-es el nodo de la estructura, arrow-es un div
+    que contiene dos div que corresponden a la línea y a la punta de flecha(line y point) */
 let texto;
 let newDiv, arrow, line, point;
 let cola = [];
@@ -73,7 +73,7 @@ function createElement() {
     arrow.style.animation = "flecha 3s";
     /* Aquí obtenemos el div que ya está en el html de cola.html el cual tiene id="animacion"
     para después agregarle como hijos al newDiv (el nodo) y el div de la flecha (arrow) */
-    let divActual = document.getElementById("animacion");                
+    let divActual = document.getElementById("animacion");
     divActual.appendChild(newDiv);
     divActual.appendChild(arrow);
     //Este es para borrar lo que hay en el input una vez que se agrega un elemento
@@ -90,8 +90,8 @@ function createElement() {
     quiero que se tarde para resaltarlo */
     let cont = 1
     var interval = setInterval(() => {
-        if(cont < 7) {
-            highlightFor("qCode"+cont, "#A6032F", 0.5);
+        if (cont < 7) {
+            highlightFor("qCode" + cont, "#ef9a9a", 0.5);
             cont++;
         } else {
             /* esta función lo que hace es detener las llamadas a la función setInterval, ya que el
@@ -101,7 +101,7 @@ function createElement() {
             detener */
             clearInterval(interval);
         }
-    }, 500);   
+    }, 500);
     /*---------/ANIMAR EL CÓDIGO EN C--------- */
     //Esta es otra forma de animarlo >:(
     //Esto es parte de la otra forma de animarlo
@@ -120,13 +120,13 @@ function createElement() {
     animar();*/
 }
 
-function quitarElement() {         
-    if(!elemento) {
+function quitarElement() {
+    if (!elemento) {
         alert("La cola está vacía");
-    } else {    
+    } else {
         /* Aquí se verifica si existen algún div que corresponda al nodo con su flecha
         si no existe ningún elemento entonces la cola está vacía y se avisa al usuario  */
-        if(!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))){
+        if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
             alert("La cola está vacía");
         } else {
             /* Si existe algún elemento entonces vamos a agregar una clase llamada ocultar
@@ -138,8 +138,8 @@ function quitarElement() {
             cola.shift();
             let cont = 1
             var interval = setInterval(() => {
-                if(cont < 7) {
-                    highlightFor("dCode"+cont, "#A6032F", 0.5);
+                if (cont < 7) {
+                    highlightFor("dCode" + cont, "#ef9a9a", 0.5);
                     cont++;
                 } else {
                     clearInterval(interval);
@@ -154,24 +154,24 @@ function quitarElement() {
                 let flecha = document.getElementById("flecha");
                 let divPadre = document.getElementById("animacion");
                 divPadre.removeChild(elemento);
-                divPadre.removeChild(flecha);                
+                divPadre.removeChild(flecha);
             }, 1000);
-        }                              
+        }
     }
 }
 
-function highlightFor(id, color, seconds){
+function highlightFor(id, color, seconds) {
     var element = document.getElementById(id);
     var origcolor = element.style.backgroundColor;
     element.style.backgroundColor = color;
-    var t = setTimeout(function(){
-    element.style.backgroundColor = origcolor;
-    },(seconds*1000));
+    var t = setTimeout(function() {
+        element.style.backgroundColor = origcolor;
+    }, (seconds * 1000));
 }
 
 function guardarEstructura() {
-    localStorage.setItem('cola', JSON.stringify(cola)); 
-    alert('Se guardó tu estructura correctamente en el Local Storage del navegador');   
+    localStorage.setItem('cola', JSON.stringify(cola));
+    alert('Se guardó tu estructura correctamente en el Local Storage del navegador');
 }
 
 function restaurarEstructura() {
@@ -179,8 +179,8 @@ function restaurarEstructura() {
     arrayCola = JSON.parse(arrayCola);
     cola = [...arrayCola]
     var animacionDiv = document.getElementById("animacion");
-    if(animacionDiv.hasChildNodes()) {
-        while(animacionDiv.childNodes.length >= 1) {
+    if (animacionDiv.hasChildNodes()) {
+        while (animacionDiv.childNodes.length >= 1) {
             animacionDiv.removeChild(animacionDiv.firstChild);
         }
     }
@@ -200,7 +200,7 @@ function restaurarEstructura() {
         arrow.appendChild(line);
         arrow.appendChild(point);
         newDiv.style.animation = "slidein 3s";
-        arrow.style.animation = "flecha 3s";                        
+        arrow.style.animation = "flecha 3s";
         animacionDiv.appendChild(newDiv);
         animacionDiv.appendChild(arrow);
     });
