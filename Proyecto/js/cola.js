@@ -28,13 +28,17 @@ window.onload = function() {
     los nodos de la estructura, newDiv-es el nodo de la estructura, arrow-es un div
     que contiene dos div que corresponden a la línea y a la punta de flecha(line y point) */
 let texto;
-let newDiv, arrow, line, point;
+let newDiv, arrow, line, point, arrow2, line2, point2;
 let cola = [];
 
 function createElement() {
     /* Cuando se llama a esta función con el botón de agregar elemento se obtiene el valor
     que se puso en el input, ese será el texto que pondremos en el nodo que se va a agregar */
     texto = document.getElementById("elemento").value;
+    if (texto == "") {
+        alert("Necesitas poner un valor");
+        return false;
+    }
     cola.push(texto);
     /* ----------CREAR EL NODO CON LA FLECHA--------- */
     /* aquí se crean 4 divs, uno que es el nodo, otro que es el contenedor de la flecha
@@ -42,8 +46,11 @@ function createElement() {
     respectivo orden */
     newDiv = document.createElement("div");
     arrow = document.createElement("div");
+    arrow2 = document.createElement("div");
     line = document.createElement("div");
     point = document.createElement("div");
+    line2 = document.createElement("div");
+    point2 = document.createElement("div");
     /* ----------/CREAR EL NODO CON LA FLECHA--------- */
     /* ----------ESTABLECIENDO LOS ATRIBUTOS--------- */
     /* Aquí se establecen atributos, especificamente id y class eso es muy importante
@@ -54,8 +61,12 @@ function createElement() {
     newDiv.setAttribute("class", "nodos");
     arrow.setAttribute("class", "arrow");
     arrow.setAttribute("id", "flecha");
+    arrow2.setAttribute("class", "arrow");
+    arrow2.setAttribute("id", "flecha");
     line.setAttribute("class", "line");
     point.setAttribute("class", "point");
+    line2.setAttribute("class", "line");
+    point2.setAttribute("class", "point");
     /* ----------/ESTABLECIENDO LOS ATRIBUTOS--------- */
     //Aquí content es el texto del nodo el cual tomamos del input
     let content = document.createTextNode(texto);
@@ -66,16 +77,25 @@ function createElement() {
     newDiv.appendChild(content);
     arrow.appendChild(line);
     arrow.appendChild(point);
+    arrow2.appendChild(line2);
+    arrow2.appendChild(point2);
     /* ----------/AGREGANDO HIJOS A LOS DIV--------- */
     /* Estas dos líneas establecen la animación ya hecha en el archivo cola.css y el tiempo
     que va a durar la animacion */
     newDiv.style.animation = "slidein 3s";
     arrow.style.animation = "flecha 3s";
+    arrow2.style.animation = "flecha 3s";
     /* Aquí obtenemos el div que ya está en el html de cola.html el cual tiene id="animacion"
     para después agregarle como hijos al newDiv (el nodo) y el div de la flecha (arrow) */
     let divActual = document.getElementById("animacion");
-    divActual.appendChild(newDiv);
-    divActual.appendChild(arrow);
+    if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
+        divActual.appendChild(arrow2);
+        divActual.appendChild(newDiv);
+        divActual.appendChild(arrow);
+    } else {
+        divActual.appendChild(newDiv);
+        divActual.appendChild(arrow);
+    }
     //Este es para borrar lo que hay en el input una vez que se agrega un elemento
     document.getElementById("elemento").value = "";
     /*---------ANIMAR EL CÓDIGO EN C--------- */
@@ -189,20 +209,36 @@ function restaurarEstructura() {
         arrow = document.createElement("div");
         line = document.createElement("div");
         point = document.createElement("div");
+        arrow2 = document.createElement("div");
+        line2 = document.createElement("div");
+        point2 = document.createElement("div");
         newDiv.setAttribute("id", "nodo");
         newDiv.setAttribute("class", "nodos");
         arrow.setAttribute("class", "arrow");
         arrow.setAttribute("id", "flecha");
         line.setAttribute("class", "line");
         point.setAttribute("class", "point");
+        arrow2.setAttribute("class", "arrow");
+        arrow2.setAttribute("id", "flecha");
+        line2.setAttribute("class", "line");
+        point2.setAttribute("class", "point");
         let content = document.createTextNode(element);
         newDiv.appendChild(content);
         arrow.appendChild(line);
         arrow.appendChild(point);
+        arrow2.appendChild(line2);
+        arrow2.appendChild(point2);
         newDiv.style.animation = "slidein 3s";
         arrow.style.animation = "flecha 3s";
-        animacionDiv.appendChild(newDiv);
-        animacionDiv.appendChild(arrow);
+        arrow2.style.animation = "flecha 3s";
+        if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
+            animacionDiv.appendChild(arrow2);
+            animacionDiv.appendChild(newDiv);
+            animacionDiv.appendChild(arrow);
+        } else {
+            animacionDiv.appendChild(newDiv);
+            animacionDiv.appendChild(arrow);
+        }
     });
 }
 
