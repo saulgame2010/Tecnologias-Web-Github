@@ -48,49 +48,7 @@ function agregarPrincipio() {
         return false;
     }
     lista.unshift(texto);
-    var animacionDiv = document.getElementById("animacion");
-    if (animacionDiv.hasChildNodes()) {
-        while (animacionDiv.childNodes.length >= 1) {
-            animacionDiv.removeChild(animacionDiv.firstChild);
-        }
-    }
-    lista.forEach(element => {
-        newDiv = document.createElement("div");
-        arrow = document.createElement("div");
-        line = document.createElement("div");
-        point = document.createElement("div");
-        arrow2 = document.createElement("div");
-        line2 = document.createElement("div");
-        point2 = document.createElement("div");
-        newDiv.setAttribute("id", "nodo");
-        newDiv.setAttribute("class", "nodos");
-        arrow.setAttribute("class", "arrow");
-        arrow.setAttribute("id", "flecha");
-        line.setAttribute("class", "line");
-        point.setAttribute("class", "point");
-        arrow2.setAttribute("class", "arrow");
-        arrow2.setAttribute("id", "flecha");
-        line2.setAttribute("class", "line");
-        point2.setAttribute("class", "point");
-        let content = document.createTextNode(element);
-        newDiv.appendChild(content);
-        arrow.appendChild(line);
-        arrow.appendChild(point);
-        arrow2.appendChild(line2);
-        arrow2.appendChild(point2);
-        newDiv.style.animation = "slidein 3s";
-        arrow.style.animation = "flecha 3s";
-        arrow2.style.animation = "flecha 3s";
-        if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
-            animacionDiv.appendChild(arrow2);
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        } else {
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        }
-    });
-    document.getElementById("elemento").value = "";
+    generarDivs(lista);
 }
 
 function agregarFinal() {
@@ -100,49 +58,7 @@ function agregarFinal() {
         return false;
     }
     lista.push(texto);
-    var animacionDiv = document.getElementById("animacion");
-    if (animacionDiv.hasChildNodes()) {
-        while (animacionDiv.childNodes.length >= 1) {
-            animacionDiv.removeChild(animacionDiv.firstChild);
-        }
-    }
-    lista.forEach(element => {
-        newDiv = document.createElement("div");
-        arrow = document.createElement("div");
-        line = document.createElement("div");
-        point = document.createElement("div");
-        arrow2 = document.createElement("div");
-        line2 = document.createElement("div");
-        point2 = document.createElement("div");
-        newDiv.setAttribute("id", "nodo");
-        newDiv.setAttribute("class", "nodos");
-        arrow.setAttribute("class", "arrow");
-        arrow.setAttribute("id", "flecha");
-        line.setAttribute("class", "line");
-        point.setAttribute("class", "point");
-        arrow2.setAttribute("class", "arrow");
-        arrow2.setAttribute("id", "flecha");
-        line2.setAttribute("class", "line");
-        point2.setAttribute("class", "point");
-        let content = document.createTextNode(element);
-        newDiv.appendChild(content);
-        arrow.appendChild(line);
-        arrow.appendChild(point);
-        arrow2.appendChild(line2);
-        arrow2.appendChild(point2);
-        newDiv.style.animation = "slidein 3s";
-        arrow.style.animation = "flecha 3s";
-        arrow2.style.animation = "flecha 3s";
-        if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
-            animacionDiv.appendChild(arrow2);
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        } else {
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        }
-    });
-    document.getElementById("elemento").value = "";
+    generarDivs(lista);
 }
 
 function agregarIndex() {
@@ -153,97 +69,12 @@ function agregarIndex() {
         return false;
     }
     lista.splice(pos, 0, texto);
-    var animacionDiv = document.getElementById("animacion");
-    if (animacionDiv.hasChildNodes()) {
-        while (animacionDiv.childNodes.length >= 1) {
-            animacionDiv.removeChild(animacionDiv.firstChild);
-        }
-    }
-    lista.forEach(element => {
-        newDiv = document.createElement("div");
-        arrow = document.createElement("div");
-        line = document.createElement("div");
-        point = document.createElement("div");
-        arrow2 = document.createElement("div");
-        line2 = document.createElement("div");
-        point2 = document.createElement("div");
-        newDiv.setAttribute("id", "nodo");
-        newDiv.setAttribute("class", "nodos");
-        arrow.setAttribute("class", "arrow");
-        arrow.setAttribute("id", "flecha");
-        line.setAttribute("class", "line");
-        point.setAttribute("class", "point");
-        arrow2.setAttribute("class", "arrow");
-        arrow2.setAttribute("id", "flecha");
-        line2.setAttribute("class", "line");
-        point2.setAttribute("class", "point");
-        let content = document.createTextNode(element);
-        newDiv.appendChild(content);
-        arrow.appendChild(line);
-        arrow.appendChild(point);
-        arrow2.appendChild(line2);
-        arrow2.appendChild(point2);
-        newDiv.style.animation = "slidein 3s";
-        arrow.style.animation = "flecha 3s";
-        arrow2.style.animation = "flecha 3s";
-        if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
-            animacionDiv.appendChild(arrow2);
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        } else {
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        }
-    });
-    document.getElementById("elemento").value = "";
-    document.getElementById("index").value = "";
+    generarDivs(lista);
 }
 
 function quitarPrincipio() {
-    lista.shift(texto);
-    var animacionDiv = document.getElementById("animacion");
-    if (animacionDiv.hasChildNodes()) {
-        while (animacionDiv.childNodes.length >= 1) {
-            animacionDiv.removeChild(animacionDiv.firstChild);
-        }
-    }
-    lista.forEach(element => {
-        newDiv = document.createElement("div");
-        arrow = document.createElement("div");
-        line = document.createElement("div");
-        point = document.createElement("div");
-        arrow2 = document.createElement("div");
-        line2 = document.createElement("div");
-        point2 = document.createElement("div");
-        newDiv.setAttribute("id", "nodo");
-        newDiv.setAttribute("class", "nodos");
-        arrow.setAttribute("class", "arrow");
-        arrow.setAttribute("id", "flecha");
-        line.setAttribute("class", "line");
-        point.setAttribute("class", "point");
-        arrow2.setAttribute("class", "arrow");
-        arrow2.setAttribute("id", "flecha");
-        line2.setAttribute("class", "line");
-        point2.setAttribute("class", "point");
-        let content = document.createTextNode(element);
-        newDiv.appendChild(content);
-        arrow.appendChild(line);
-        arrow.appendChild(point);
-        arrow2.appendChild(line2);
-        arrow2.appendChild(point2);
-        newDiv.style.animation = "slidein 3s";
-        arrow.style.animation = "flecha 3s";
-        arrow2.style.animation = "flecha 3s";
-        if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
-            animacionDiv.appendChild(arrow2);
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        } else {
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        }
-    });
-    document.getElementById("elemento").value = "";
+    lista.shift();
+    generarDivs(lista);
 }
 
 function quitarEnd() {
@@ -253,6 +84,14 @@ function quitarEnd() {
 function quitarIndex() {
     let pos = document.getElementById("index").value;
     lista.splice(pos, 1);
+    generarDivs(lista);
+}
+
+function quitarValue() {
+
+}
+
+function generarDivs(lista) {
     var animacionDiv = document.getElementById("animacion");
     if (animacionDiv.hasChildNodes()) {
         while (animacionDiv.childNodes.length >= 1) {
@@ -297,10 +136,6 @@ function quitarIndex() {
     });
     document.getElementById("elemento").value = "";
     document.getElementById("index").value = "";
-}
-
-function quitarValue() {
-
 }
 
 function highlightFor(id, color, seconds) {
@@ -321,48 +156,7 @@ function restaurarEstructura() {
     var arrayLista = localStorage.getItem('lista');
     arrayLista = JSON.parse(arrayLista);
     lista = [...arrayLista]
-    var animacionDiv = document.getElementById("animacion");
-    if (animacionDiv.hasChildNodes()) {
-        while (animacionDiv.childNodes.length >= 1) {
-            animacionDiv.removeChild(animacionDiv.firstChild);
-        }
-    }
-    arrayLista.forEach(element => {
-        newDiv = document.createElement("div");
-        arrow = document.createElement("div");
-        line = document.createElement("div");
-        point = document.createElement("div");
-        arrow2 = document.createElement("div");
-        line2 = document.createElement("div");
-        point2 = document.createElement("div");
-        newDiv.setAttribute("id", "nodo");
-        newDiv.setAttribute("class", "nodos");
-        arrow.setAttribute("class", "arrow");
-        arrow.setAttribute("id", "flecha");
-        line.setAttribute("class", "line");
-        point.setAttribute("class", "point");
-        arrow2.setAttribute("class", "arrow");
-        arrow2.setAttribute("id", "flecha");
-        line2.setAttribute("class", "line");
-        point2.setAttribute("class", "point");
-        let content = document.createTextNode(element);
-        newDiv.appendChild(content);
-        arrow.appendChild(line);
-        arrow.appendChild(point);
-        arrow2.appendChild(line2);
-        arrow2.appendChild(point2);
-        newDiv.style.animation = "slidein 3s";
-        arrow.style.animation = "flecha 3s";
-        arrow2.style.animation = "flecha 3s";
-        if (!(document.querySelector(".nodos")) && !(document.querySelector(".arrow"))) {
-            animacionDiv.appendChild(arrow2);
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        } else {
-            animacionDiv.appendChild(newDiv);
-            animacionDiv.appendChild(arrow);
-        }
-    });
+    generarDivs(lista);
 }
 
 function cambiarDark() {
