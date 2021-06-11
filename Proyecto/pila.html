@@ -7,34 +7,10 @@
     <!--Estilos-->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link id="theme" rel="stylesheet" type="text/css" href="css/color.css">
+    <link rel="stylesheet" href="css/pila.css">
     <!--Scripts-->
-    <script type="application/javascript" src="js/CustomEvents.js">
-    </script>
-    <script type="application/javascript" src="js/UndoFunctions.js">
-    </script>
-    <script type="application/javascript" src="js/AnimatedObject.js">
-    </script>
-    <script type="application/javascript" src="js/AnimatedLabel.js">
-    </script>
-    <script type="application/javascript" src="js/AnimatedCircle.js">
-    </script>
-    <script type="application/javascript" src="js/AnimatedRectangle.js">
-    </script>
-    <script type="application/javascript" src="js/AnimatedLinkedList.js">
-    </script>
-    <script type="application/javascript" src="js/HighlightCircle.js">
-    </script>
-    <script type="application/javascript" src="js/Line.js">
-    </script>
-    <script type="application/javascript" src="js/ObjectManager.js">
-    </script>
-    <script type="application/javascript" src="js/AnimationMain.js">
-    </script>
-    <script type="application/javascript" src="js/Algorithm.js">
-    </script>
-    <script type="application/javascript" src="js/StackArray.js">
-    </script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/pila.js"></script>
 </head>
 
 <body class="VizualizationMainPage">
@@ -66,35 +42,67 @@
 
         <!--Contenido-->
         <section id="content">
-            <div id="container">
-
-                <div id="header">
-                    <h1>Pila</h1>
-                </div>
-
-                <div id="mainContent">
-
-                    <div id="algoControlSection">
-                        <!-- Table for buttons to control specific animation (insert/find/etc) -->
-                        <!-- (filled in by javascript code specific to the animtion) -->
-                        <table id="AlgorithmSpecificControls"> </table>
-                    </div>
-
-                    <!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
-
-                    <canvas id="canvas" width="1000" height="500"></canvas>
-
-                    <div id="generalAnimationControlSection">
-                        <!-- Table for buttons to control general animation (play/pause/undo/etc) -->
-                        <!-- (filled in by javascript code, specifically AnimationMain.js)  -->
-
-                        <table id="GeneralAnimationControls"> </table>
-                    </div>
-
-                </div>
-                <!-- mainContent -->
+            <div id="header">
+                <h1>Lista</h1>
             </div>
-            <!-- container -->
+            <div id="controles">
+                <input type="text" name="elemento" id="elemento" maxlength="3" placeholder="valor" required>
+                <input type="button" value="Push" id="push">
+                <input type="button" value="Pop" id="pop">
+                <input type="button" value="Guardar estructura" id="guardar">
+                <input type="button" value="Restaurar estructura" id="restaurar">
+                <input type="button" value="Limpiar Storage" id="limpiar">
+            </div>
+            <!--Este div es el área de animación-->
+            <div id="animacion">
+            </div>
+            <!--Este pre es para poner el código, el <pre> funciona como un <p>
+				solo que éste respeta los saltos de línea y espacios que se hagan aquí en el
+			editor de texto, es decir, si usas <pre> 
+			hola
+			jaja
+			ok </pre> en el html aparecerá como tal
+		"hola
+		jaja
+		ok" con esos saltos de línea sin necesidad de usar <br> o etiquetas <p> individuales-->
+            <pre id="codigo">
+<span id="queue">
+	<!--Aquí es importante poner un span con un id a todas las líneas de código que queramos
+	resaltar con la animación de javascript-->
+<span id="qCode1">void Queue(cola * c, elemento e){</span>
+	<span id="qCode2">if(c->num_elem==0){</span>
+		<span id="qCode3">c->frente++;</span>
+		<span id="qCode4">c->final++;</span>
+		<span id="qCode5">c->elementos[c->final] = e;</span>
+		<span id="qCode6">c->num_elem++;</span>
+	}
+</span>
+<span id="dequeue">
+<span id="dCode1">elemento Dequeue(cola * c){</span>
+	elemento e;
+	int i;
+	if(c->num_elem==0){
+		printf("error: desbordamiento de cola");
+		exit(2);
+	}
+	else{
+		<span id="dCode2">e = c->elementos[c->frente];</span>
+		
+		for(i = c->frente; i < c->final; i++){
+			<span id="dCode3">c->elementos[i]=c->elementos[i + 1];</span>
+		}
+		<span id="dCode4">c->final--;</span>
+		<span id="dCode5">c->num_elem--;</span>
+		
+		if(c->num_elem==0)
+			Initialize(c);
+	}
+	
+	<span id="dCode6">return e;</span>
+}
+</span>
+			</pre>
+            <div class="clearfix"></div>
             <div class="clearfix"></div>
         </section>
     </section>
