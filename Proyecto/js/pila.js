@@ -42,6 +42,8 @@ function agregarPrincipio() {
 }
 
 function quitarEnd() {
+    pila.shift();
+    generarDivs(pila);
 
 }
 
@@ -108,7 +110,7 @@ function guardarEstructura() {
 function restaurarEstructura() {
     var arrayPila = localStorage.getItem('pila');
     arrayPila = JSON.parse(arrayPila);
-    pila = [...arrayPila]
+    pila = [...arrayPila] /* pila = arrayPila */
     generarDivs(pila);
 }
 
