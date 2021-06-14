@@ -78,6 +78,8 @@ function quitarPrincipio() {
 }
 
 function quitarEnd() {
+	lista.pop();
+	generarDivs(lista);
 
 }
 
@@ -88,6 +90,16 @@ function quitarIndex() {
 }
 
 function quitarValue() {
+	let val = document.getElementById("elemento").value;
+	let pos = lista.indexOf (val);
+	if (pos == -1)
+		{
+			alert("No se encontro el valor correcto");
+			document.getElementById("elemento").value = "";
+			return false;
+		}
+	lista.splice(pos,1);
+	generarDivs(lista);
 
 }
 
