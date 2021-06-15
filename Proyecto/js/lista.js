@@ -49,6 +49,16 @@ function agregarPrincipio() {
     }
     lista.unshift(texto);
     generarDivs(lista);
+    
+    let cont = 1
+    var interval = setInterval(() => {
+        if (cont < 6) {
+            highlightFor("agriniCode" + cont, "#ef9a9a", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 250);
 }
 
 function agregarFinal() {
@@ -59,6 +69,16 @@ function agregarFinal() {
     }
     lista.push(texto);
     generarDivs(lista);
+    
+    let cont = 1
+    var interval = setInterval(() => {
+        if (cont < 11) {
+            highlightFor("agrfinalCode" + cont, "#ef9a9a", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 250);
 }
 
 function agregarIndex() {
@@ -70,23 +90,62 @@ function agregarIndex() {
     }
     lista.splice(pos, 0, texto);
     generarDivs(lista);
+
+    let cont = 1
+    var interval = setInterval(() => {
+        if (cont < 14) {
+            highlightFor("pnrpscCode" + cont, "#ef9a9a", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 250);
 }
 
-function quitarPrincipio() {
+function quitarPrincipio() { 
     lista.shift();
     generarDivs(lista);
+
+    let cont = 1
+    var interval = setInterval(() => {
+        if (cont < 7) {
+            highlightFor("elmIniCode" + cont, "#ef9a9a", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 250);
 }
 
-function quitarEnd() {
+function quitarEnd() { 
 	lista.pop();
 	generarDivs(lista);
 
+    let cont = 1
+    var interval = setInterval(() => {
+        if (cont < 16) {
+            highlightFor("elmFinCode" + cont, "#ef9a9a", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 250);
 }
 
 function quitarIndex() {
     let pos = document.getElementById("index").value;
     lista.splice(pos, 1);
     generarDivs(lista);
+
+    let cont = 1
+    var interval = setInterval(() => {
+        if (cont < 18) {
+            highlightFor("elmPosCode" + cont, "#ef9a9a", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 250);
 }
 
 function quitarValue() {
@@ -100,6 +159,16 @@ function quitarValue() {
 		}
 	lista.splice(pos,1);
 	generarDivs(lista);
+
+    let cont = 1
+    var interval = setInterval(() => {
+        if (cont < 10) {
+            highlightFor("elmValorCode" + cont, "#ef9a9a", 0.5);
+            cont++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 250);
 
 }
 
@@ -156,7 +225,7 @@ function highlightFor(id, color, seconds) {
     element.style.backgroundColor = color;
     var t = setTimeout(function() {
         element.style.backgroundColor = origcolor;
-    }, (seconds * 1000));
+    }, (seconds * 500));
 }
 
 function guardarEstructura() {
