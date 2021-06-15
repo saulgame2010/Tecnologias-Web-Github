@@ -49,7 +49,7 @@ function agregarPrincipio() {
     }
     lista.unshift(texto);
     generarDivs(lista);
-    
+
     let cont = 1
     var interval = setInterval(() => {
         if (cont < 6) {
@@ -69,7 +69,7 @@ function agregarFinal() {
     }
     lista.push(texto);
     generarDivs(lista);
-    
+
     let cont = 1
     var interval = setInterval(() => {
         if (cont < 11) {
@@ -88,6 +88,10 @@ function agregarIndex() {
         alert("Necesitas poner un valor");
         return false;
     }
+    if (pos > lista.length) {
+        alert("No existe esa posición");
+        return false;
+    }
     lista.splice(pos, 0, texto);
     generarDivs(lista);
 
@@ -102,7 +106,7 @@ function agregarIndex() {
     }, 250);
 }
 
-function quitarPrincipio() { 
+function quitarPrincipio() {
     lista.shift();
     generarDivs(lista);
 
@@ -117,9 +121,9 @@ function quitarPrincipio() {
     }, 250);
 }
 
-function quitarEnd() { 
-	lista.pop();
-	generarDivs(lista);
+function quitarEnd() {
+    lista.pop();
+    generarDivs(lista);
 
     let cont = 1
     var interval = setInterval(() => {
@@ -149,16 +153,15 @@ function quitarIndex() {
 }
 
 function quitarValue() {
-	let val = document.getElementById("elemento").value;
-	let pos = lista.indexOf (val);
-	if (pos == -1)
-		{
-			alert("No se encontro el valor correcto");
-			document.getElementById("elemento").value = "";
-			return false;
-		}
-	lista.splice(pos,1);
-	generarDivs(lista);
+    let val = document.getElementById("elemento").value;
+    let pos = lista.indexOf(val);
+    if (pos == -1) {
+        alert("No se encontro el valor correcto");
+        document.getElementById("elemento").value = "";
+        return false;
+    }
+    lista.splice(pos, 1);
+    generarDivs(lista);
 
     let cont = 1
     var interval = setInterval(() => {
